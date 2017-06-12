@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 
 	var path = require('path');
 	var datauri = require('datauri');
-	var UglifyJS = require("uglify-js");
+	var UglifyJS = require("uglify-es");
 	var CleanCSS = require('clean-css');
 	
 	grunt.registerMultiTask('inline', "Replaces <link>, <script> and <img> tags to their inline contents", function() {
@@ -130,7 +130,7 @@ module.exports = function(grunt) {
 
 			if(!isRemotePath(src) && src.indexOf(options.tag)!=-1){
 				var inlineFilePath = path.resolve( path.dirname(filepath), src ).replace(/\?.*$/, '');	// 将参数去掉
-				var c = options.uglify ? UglifyJS.minify(inlineFilePath).code : grunt.file.read( inlineFilePath );
+				var c = options.uglify ? UglifyES.minify(inlineFilePath).code : grunt.file.read( inlineFilePath );
 				if( grunt.file.exists(inlineFilePath) ){
 					ret = '<script>\n' + c + '\n</script>';
 				}else{
