@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 
 	var path = require('path');
 	var datauri = require('datauri');
-	var UglifyJS = require("uglify-es");
+	var UglifyES = require("uglify-es");
 	var CleanCSS = require('clean-css');
 	
 	grunt.registerMultiTask('inline', "Replaces <link>, <script> and <img> tags to their inline contents", function() {
