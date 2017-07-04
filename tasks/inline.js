@@ -137,7 +137,7 @@ module.exports = function(grunt) {
           var babel_plugins = options.babelify || [];
 
           if (babel_plugins.length > 0) {
-            contents = Babel.transform(contents, {plugins: babel_plugins})
+            contents = Babel.transform(contents, {plugins: babel_plugins}).code;
           }
 
 					var c = options.uglify ? UglifyES.minify(contents).code : contents;
