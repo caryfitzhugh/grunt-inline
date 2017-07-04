@@ -134,10 +134,10 @@ module.exports = function(grunt) {
 
 				if( grunt.file.exists(inlineFilePath) ){
 					var contents = grunt.file.read( inlineFilePath );
-          var babel_plugins = options.babelify || [];
+          var babel_plugins = options.babel || {};
 
-          if (babel_plugins.length > 0) {
-            contents = Babel.transform(contents, {plugins: babel_plugins}).code;
+          if (options.babelify) {
+            contents = Babel.transform(contents, options.babelify).code;
           }
 
 					var c = options.uglify ? UglifyES.minify(contents).code : contents;
