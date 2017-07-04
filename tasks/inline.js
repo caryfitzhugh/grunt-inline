@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 	var UglifyES = require("uglify-es");
 	var CleanCSS = require('clean-css');
   var Babel = require('babel-core');
-asdfasd
+
 	grunt.registerMultiTask('inline', "Replaces <link>, <script> and <img> tags to their inline contents", function() {
 
 		var options = this.options({tag: '__inline'}),
