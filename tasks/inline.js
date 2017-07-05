@@ -142,7 +142,7 @@ module.exports = function(grunt) {
 
 					var c = options.uglify ? UglifyES.minify(contents).code : contents;
 
-					ret = '<script> /* ' + filepath  + ' */\n' + c + '\n</script>';
+					ret = '<script> /* ' + inlineFilePpath  + ' */\n' + c + '\n</script>';
 				}else{
 					grunt.log.error("Couldn't find " + inlineFilePath + '!');
 				}
